@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Forecast</title>
+</head>
+
+<body>
+  <div id="header">
+    <h1>Weather Forecast</h1>
+  </div>
+
+  <script>
+    fetch("https://weatherapi-com.p.rapidapi.com/forecast.json?q=Jakarta&days=3", {
+      "method": "GET",
+      "headers": {
+        'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
+        'X-RapidAPI-Key': '05f7002649msh93c33411929c228p17864ejsnf5b360d434cd',
+      }
+    })
+   .then(response => {
+     console.log(response.json());
+   })
+   .catch(err => {
+     console.error(err);
+   });
+ </script>
+</body>
+</html>
